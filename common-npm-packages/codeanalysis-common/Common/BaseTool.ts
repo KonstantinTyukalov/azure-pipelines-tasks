@@ -47,6 +47,13 @@ export abstract class BaseTool implements IAnalysisTool {
      */
     public abstract configureBuild(toolRunner: ToolRunner): ToolRunner;
 
+    /**
+    * Configures the provided ToolRunner instance with arguments which will invoke the tool represented by this class.
+    * @param toolRunner
+    * @returns {ToolRunner} ToolRunner instance with arguments applied
+    */
+    public abstract configureBuildAsync(toolRunner: ToolRunner): Promise<ToolRunner>;
+
     public processResults(): AnalysisResult[] {
         if (!this.isEnabled()) {
             tl.debug(`[CA] ${this.toolName} analysis is not enabled.`);

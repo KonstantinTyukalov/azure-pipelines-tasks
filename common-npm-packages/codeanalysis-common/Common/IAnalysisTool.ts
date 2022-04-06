@@ -31,6 +31,13 @@ export interface IAnalysisTool {
     configureBuild(toolRunner: ToolRunner): ToolRunner;
 
     /**
+    * Configure the build to run the analysis asynchronously
+    *
+    * @param {ToolRunner} toolRunner
+    */
+    configureBuildAsync(toolRunner: ToolRunner): Promise<ToolRunner>;
+
+    /**
      * Identify and parse the analysis results
      *
      * @returns {AnalysisResult[]}

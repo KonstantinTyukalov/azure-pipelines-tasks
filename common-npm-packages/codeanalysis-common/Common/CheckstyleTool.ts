@@ -46,6 +46,10 @@ export class CheckstyleTool extends BaseTool {
         return toolRunner;
     }
 
+    public async configureBuildAsync(toolRunner: ToolRunner): Promise<ToolRunner> {
+        return this.configureBuild(toolRunner);
+    }
+
     /**
      * Implementers must specify where the XML reports are located
      */

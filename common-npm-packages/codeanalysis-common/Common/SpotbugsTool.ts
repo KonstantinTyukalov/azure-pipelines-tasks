@@ -49,6 +49,10 @@ export class SpotbugsTool extends BaseTool {
         return toolRunner;
     }
 
+    public async configureBuildAsync(toolRunner: ToolRunner): Promise<ToolRunner> {
+        return this.configureBuild(toolRunner);
+    }
+
     protected getSpotBugsGradlePluginVersion(): string {
         const userSpecifiedVersion = tl.getInput('spotbugsGradlePluginVersion');
         if (userSpecifiedVersion) {
